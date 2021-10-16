@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ListPad">
         <activity
+            android:name=".listagem.ListaItensActivity"
+            android:exported="true" />
+        <activity
+            android:name=".listagem.CadastroListaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".categoria.CadastroCategoriaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".categoria.CategoriaActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

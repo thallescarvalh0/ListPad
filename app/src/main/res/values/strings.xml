@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">ListPad</string>
+    <string name="cadastro_lista_menu">Cadastro Lista</string>
+    <string name="cadastro_categoria_menu">Cadastro Categoria</string>
+    <string name="sair_menu">Sair</string>
+    <string name="adicionar_categoria_action_bt">Adicionar Categoria</string>
+    <string name="activity_title_categoria">Categorias</string>
+    <string name="activity_title_cad_categoria">Cadastro Categoria</string>
+    <string name="descricao_categoria_cadastro">Descrição categoria</string>
+    <string name="cadastrar_categoria">Cadastrar</string>
+
+    <string name="cadastrar_lista">Cadastro lista</string>
+    <string name="nome_lista_cadastro">Nome lista</string>
+    <string name="descricao_lista_cadastro">Descrição lista</string>
+    <string name="urgente_cadastro_lista">Urgente</string>
+    <string name="cadastrar_listagem">Cadastrar</string>
 </resources>
