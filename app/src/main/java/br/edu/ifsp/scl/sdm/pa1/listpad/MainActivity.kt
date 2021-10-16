@@ -11,8 +11,10 @@ import br.edu.ifsp.scl.sdm.pa1.listpad.categoria.CategoriaActivity
 import br.edu.ifsp.scl.sdm.pa1.listpad.listagem.CadastroListaActivity
 
 import br.edu.ifsp.scl.sdm.pa1.listpad.databinding.ActivityMainBinding
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
-class MainActivity : AppCompatActivity() {
+abstract class MainActivity : AppCompatActivity() {
 
     private lateinit var activityMainBinding: ActivityMainBinding
 
@@ -20,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(activityMainBinding.root)
+
     }
 
 
