@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "979168418566",
+    "project_id": "listpad-dff79",
+    "storage_bucket": "listpad-dff79.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979168418566:android:d90596ca1b9242ee49dc87",
+        "android_client_info": {
+          "package_name": "br.edu.ifsp.scl.sdm.pa1.listpad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "979168418566-s29qpp51nog1gcevcq5o1akl4q2n4n6k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvBs1JZoBgFN3-GLVufYJslc20I9wZ8Yc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "979168418566-s29qpp51nog1gcevcq5o1akl4q2n4n6k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
