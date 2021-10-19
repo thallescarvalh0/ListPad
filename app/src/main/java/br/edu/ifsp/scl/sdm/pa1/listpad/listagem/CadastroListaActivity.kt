@@ -16,5 +16,11 @@ class CadastroListaActivity : AppCompatActivity() {
         setContentView(cadastroListaBinding.root)
 
         title = getString(R.string.cadastrar_lista)
+
+        cadastroListaBinding.btnCadastroLista.setOnClickListener {
+
+            setResult(RESULT_OK)
+            finish()
+        }
     }
 }

@@ -21,6 +21,7 @@ class CategoriaActivity : AppCompatActivity() {
         activityCategoriaBinding.adicionarCategoria.setOnClickListener {
             val cadastroCategoriaIntent = Intent(this, CadastroCategoriaActivity::class.java)
             startActivity(cadastroCategoriaIntent)
+
         }
     }
 
