@@ -12,7 +12,7 @@ import br.edu.ifsp.scl.sdm.pa1.listpad.listagem.CadastroListaActivity
 
 import br.edu.ifsp.scl.sdm.pa1.listpad.databinding.ActivityMainBinding
 
-abstract class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var activityMainBinding: ActivityMainBinding
 
