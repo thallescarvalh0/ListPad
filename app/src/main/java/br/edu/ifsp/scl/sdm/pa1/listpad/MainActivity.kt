@@ -20,9 +20,7 @@ class MainActivity : AppCompatActivity() {
         const val EXTRA_POSICAO_LISTA = "EXTRA_POSICAO_LISTA"
 
     }
-
     private lateinit var activityMainBinding: ActivityMainBinding
-
     private lateinit var cadastroListaResultLauncher: ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
