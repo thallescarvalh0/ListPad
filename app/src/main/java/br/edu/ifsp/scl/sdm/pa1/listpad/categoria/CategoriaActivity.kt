@@ -3,6 +3,7 @@ package br.edu.ifsp.scl.sdm.pa1.listpad.categoria
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.edu.ifsp.scl.sdm.pa1.listpad.R
@@ -30,6 +31,7 @@ class CategoriaActivity : AppCompatActivity() {
 
         activityCategoriaBinding.adicionarCategoria.setOnClickListener {
             val cadastroCategoriaIntent = Intent(this, CadastroCategoriaActivity::class.java)
+            cadastroCategoriaIntent.putExtra("categoriaID", "")
             startActivity(cadastroCategoriaIntent)
 
         }
@@ -59,13 +61,12 @@ class CategoriaActivity : AppCompatActivity() {
 
         val clickListener = object :CategoriaAdapter.CategoriaClickListener{
             override fun onItemClick(pos: Int) {
-                //val intent = Intent(applicationContext,DetalheActivity::class.java)
-               // intent.putExtra("contatoID", contatoAdapter.snapshots.getSnapshot(pos).id)
-               // startActivity(intent)
+                val intent = Intent(applicationContext,CadastroCategoriaActivity::class.java)
+                intent.putExtra("categoriaID", categoriaAdapter.snapshots.getSnapshot(pos).id)
+                startActivity(intent)
             }
 
         }
-
         categoriaAdapter.clickListener = clickListener
     }
 }

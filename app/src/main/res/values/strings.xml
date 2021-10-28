@@ -14,4 +14,6 @@
     <string name="descricao_lista_cadastro">Descrição lista</string>
     <string name="urgente_cadastro_lista">Urgente</string>
     <string name="cadastrar_listagem">Cadastrar</string>
+    <string name="remover_context_menu">Remover</string>
+    <string name="editar_context_menu">Editar</string>
 </resources>

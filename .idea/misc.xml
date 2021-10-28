@@ -3,16 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/drawable-anydpi/ic_action_add_list.xml" value="0.3828125" />
-        <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/layout/activity_cadastro_categoria.xml" value="0.36666666666666664" />
-        <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/layout/activity_cadastro_lista.xml" value="0.20520833333333333" />
-        <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/layout/activity_categoria.xml" value="0.36666666666666664" />
-        <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/layout/activity_lista.xml" value="0.36666666666666664" />
-        <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/layout/activity_lista_itens.xml" value="0.18115942028985507" />
-        <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
-        <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/layout/categoria_celula.xml" value="0.25" />
-        <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/menu/menu_categoria.xml" value="0.36666666666666664" />
-        <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/menu/menu_main.xml" value="0.25396825396825395" />
+        <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/layout/activity_cadastro_categoria.xml" value="0.5" />
+        <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/layout/activity_cadastro_lista.xml" value="0.2015625" />
+        <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/layout/activity_lista_itens.xml" value="0.2015625" />
+        <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/layout/activity_main.xml" value="0.25905797101449274" />
+        <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/menu/context_menu.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

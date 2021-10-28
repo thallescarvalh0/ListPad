@@ -41,6 +41,8 @@ class CategoriaAdapter(options: FirestoreRecyclerOptions<Categoria>)
         model: Categoria
     ) {
         holder.descricaoCategoria.text = model.descricao
+
+
     }
 
 }
