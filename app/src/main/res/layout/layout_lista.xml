@@ -1,68 +1,55 @@
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/card_view"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_weight="1"
-    android:clickable="true"
-    card_view:cardCornerRadius="2dp">
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_weight="1">
+        android:layout_margin="5dp"
+        app:cardElevation="8dp">
 
-        <TableRow
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/info_text"
+                android:id="@+id/nomeListaEt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nome"
+                android:textSize="40sp"
+                android:text="teste"/>
+
+            <TextView
+                android:id="@+id/descricaoListaEt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="teste2"
+                android:layout_below="@+id/nomeListaEt"
                 android:textSize="20sp" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/info_text2"
+                android:id="@+id/categoriaListaEt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Descricao"
-                android:textSize="15sp" />
+                android:layout_below="@+id/descricaoListaEt"
+                android:text="categoria"
+                android:textSize="20sp" />
 
             <CheckBox
-                android:layout_width="30dp"
-                android:layout_height="20dp"
-                android:layoutDirection="inherit"
-                android:layout_marginLeft="15dp"></CheckBox>
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/info_text3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Categoria"
-                android:textSize="10sp" />
-
-        </TableRow>
+                android:layout_align="@+id/nomeListaEt"
+                android:layout_alignParentRight="true" />
 
 
+        </RelativeLayout>
 
+    </androidx.cardview.widget.CardView>
 
-
-    </LinearLayout>
-
-</androidx.cardview.widget.CardView>
+</LinearLayout>
 
