@@ -22,13 +22,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="40sp"
-                android:text="teste"/>
+                tools:ignore="RelativeOverlap"/>
 
             <TextView
                 android:id="@+id/descricaoListaEt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="teste2"
                 android:layout_below="@+id/nomeListaEt"
                 android:textSize="20sp" />
 
@@ -37,14 +36,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/descricaoListaEt"
-                android:text="categoria"
                 android:textSize="20sp" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_align="@+id/nomeListaEt"
-                android:layout_alignParentRight="true" />
+                android:layout_alignParentEnd="true" />
 
 
         </RelativeLayout>
