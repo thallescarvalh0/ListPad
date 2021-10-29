@@ -30,7 +30,7 @@ class CadastroCategoriaActivity : AppCompatActivity() {
 
         if (categoriaID.isNotEmpty()) {
             FirebaseInstance.dbFirestore.collection(DBConstantes.TABLE_CATEGORIA)
-                .document(categoriaID).addSnapshotListener { value, error ->
+                .document(categoriaID).addSnapshotListener { value, _ ->
                 if (value != null) {
                     val cIntent = value.toObject<Categoria>()
                     val descricao = cIntent?.descricao.toString()
@@ -42,7 +42,7 @@ class CadastroCategoriaActivity : AppCompatActivity() {
 
             }
         }
-        activityCadastroCategoriaActivityBinding.btnCadastroCategoria.setOnClickListener { click->
+        activityCadastroCategoriaActivityBinding.btnCadastroCategoria.setOnClickListener {
 
             val c = Categoria (descricao =
             activityCadastroCategoriaActivityBinding.edtDescricaoCategoria.text.toString())

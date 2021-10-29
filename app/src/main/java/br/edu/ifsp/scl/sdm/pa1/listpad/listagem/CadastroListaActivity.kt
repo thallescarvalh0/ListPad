@@ -27,7 +27,7 @@ class CadastroListaActivity : AppCompatActivity() {
 
         if (listaID.isNotEmpty()){
             FirebaseInstance.dbFirestore.collection(DBConstantes.TABLE_LISTA)
-                .document(listaID).addSnapshotListener{ value, error ->
+                .document(listaID).addSnapshotListener{ value, _ ->
                     if (value!=null){
                         val listaIntent = value.toObject<Lista>()
                         val nome = listaIntent?.nome.toString()
