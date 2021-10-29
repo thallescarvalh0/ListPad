@@ -16,4 +16,8 @@
     <string name="cadastrar_listagem">Cadastrar</string>
     <string name="remover_context_menu">Remover</string>
     <string name="editar_context_menu">Editar</string>
+
+
+    <string name="salvar_text_button">Salvar</string>
+
 </resources>

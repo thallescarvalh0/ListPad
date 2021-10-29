@@ -26,7 +26,7 @@ class CadastroCategoriaActivity : AppCompatActivity() {
 
         title = getString(R.string.activity_title_cad_categoria)
 
-        categoriaID = this.intent.getStringExtra("categoriaID") as String
+        categoriaID = this.intent.getStringExtra(DBConstantes.CATEGORIA_ID_INTENT) as String
 
         if (categoriaID.isNotEmpty()) {
             FirebaseInstance.dbFirestore.collection(DBConstantes.TABLE_CATEGORIA)
@@ -35,7 +35,7 @@ class CadastroCategoriaActivity : AppCompatActivity() {
                     val cIntent = value.toObject<Categoria>()
                     val descricao = cIntent?.descricao.toString()
                     activityCadastroCategoriaActivityBinding.edtDescricaoCategoria.setText(descricao)
-                    activityCadastroCategoriaActivityBinding.btnCadastroCategoria.text = "Salvar"
+                    activityCadastroCategoriaActivityBinding.btnCadastroCategoria.text = getString(R.string.salvar_text_button)
                     activityCadastroCategoriaActivityBinding.btnCadastroCategoria.isEnabled = false
 
                 }

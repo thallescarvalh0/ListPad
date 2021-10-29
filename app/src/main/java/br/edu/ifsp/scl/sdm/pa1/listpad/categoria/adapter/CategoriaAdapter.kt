@@ -9,7 +9,6 @@ import br.edu.ifsp.scl.sdm.pa1.listpad.R
 import br.edu.ifsp.scl.sdm.pa1.listpad.categoria.model.Categoria
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
-import kotlin.time.measureTime
 
 
 class CategoriaAdapter(options: FirestoreRecyclerOptions<Categoria>)
@@ -41,8 +40,6 @@ class CategoriaAdapter(options: FirestoreRecyclerOptions<Categoria>)
         model: Categoria
     ) {
         holder.descricaoCategoria.text = model.descricao
-
-
     }
 
 }

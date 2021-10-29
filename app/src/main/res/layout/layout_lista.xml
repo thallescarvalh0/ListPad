@@ -41,7 +41,26 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentEnd="true"
+                android:id="@+id/urgenteCk"/>
+
+            <ImageView
+                android:id="@+id/editarListaImg"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:clickable="true"
+                android:layout_below="@+id/descricaoListaEt"
+                android:layout_toStartOf="@+id/deletarListaImg"
+                android:src="@drawable/ic_action_edit" />
+
+            <ImageView
+                android:id="@+id/deletarListaImg"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:clickable="true"
+                android:layout_below="@+id/descricaoListaEt"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_action_delete" />
 
 
         </RelativeLayout>

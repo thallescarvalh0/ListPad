@@ -31,7 +31,7 @@ class CategoriaActivity : AppCompatActivity() {
 
         activityCategoriaBinding.adicionarCategoria.setOnClickListener {
             val cadastroCategoriaIntent = Intent(this, CadastroCategoriaActivity::class.java)
-            cadastroCategoriaIntent.putExtra("categoriaID", "")
+            cadastroCategoriaIntent.putExtra(DBConstantes.CATEGORIA_ID_INTENT, "")
             startActivity(cadastroCategoriaIntent)
 
         }
@@ -62,7 +62,7 @@ class CategoriaActivity : AppCompatActivity() {
         val clickListener = object :CategoriaAdapter.CategoriaClickListener{
             override fun onItemClick(pos: Int) {
                 val intent = Intent(applicationContext,CadastroCategoriaActivity::class.java)
-                intent.putExtra("categoriaID", categoriaAdapter.snapshots.getSnapshot(pos).id)
+                intent.putExtra(DBConstantes.CATEGORIA_ID_INTENT, categoriaAdapter.snapshots.getSnapshot(pos).id)
                 startActivity(intent)
             }
 

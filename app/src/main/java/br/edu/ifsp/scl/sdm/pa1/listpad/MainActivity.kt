@@ -5,32 +5,40 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContracts
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.firebase.ui.firestore.FirestoreRecyclerOptions
+import com.google.firebase.firestore.Query
 
 import br.edu.ifsp.scl.sdm.pa1.listpad.categoria.CategoriaActivity
-
 import br.edu.ifsp.scl.sdm.pa1.listpad.listagem.CadastroListaActivity
-
 import br.edu.ifsp.scl.sdm.pa1.listpad.databinding.ActivityMainBinding
+import br.edu.ifsp.scl.sdm.pa1.listpad.listagem.adapter.ListaAdapter
+import br.edu.ifsp.scl.sdm.pa1.listpad.listagem.model.Lista
+import br.edu.ifsp.scl.sdm.pa1.listpad.utils.DBConstantes
+import br.edu.ifsp.scl.sdm.pa1.listpad.utils.FirebaseInstance
+
 
 class MainActivity : AppCompatActivity() {
-    companion object Extras {
-        const val EXTRA_LISTA = "EXTRA_LISTA"
-        const val EXTRA_POSICAO_LISTA = "EXTRA_POSICAO_LISTA"
 
-    }
     private lateinit var activityMainBinding: ActivityMainBinding
-    private lateinit var cadastroListaResultLauncher: ActivityResultLauncher<Intent>
+    private lateinit var listaAdapter: ListaAdapter
+
+    override fun onStart() {
+        super.onStart()
+        updateLista()
+        listaAdapter.startListening()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        listaAdapter.stopListening()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(activityMainBinding.root)
-
-        cadastroListaResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
-            //todo faz algo após result da tela
-        }
 
     }
 
@@ -42,7 +50,9 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId){
             R.id.cadastro_lista -> {
-                cadastroListaResultLauncher.launch(Intent(this, CadastroListaActivity::class.java))
+                val intent = Intent(this, CadastroListaActivity::class.java)
+                intent.putExtra(DBConstantes.LISTA_ID_INTENT, "")
+                startActivity(intent)
                 true
             }
             R.id.cadastro_categoria -> {
@@ -59,4 +69,35 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun updateLista(){
+        val query: Query = FirebaseInstance.dbFirestore.collection(DBConstantes.TABLE_LISTA).orderBy("nome")
+        val options: FirestoreRecyclerOptions<Lista> = FirestoreRecyclerOptions.Builder<Lista>()
+            .setQuery(query, Lista::class.java).build()
+
+        listaAdapter = ListaAdapter(options)
+
+        val recyclerView = findViewById<RecyclerView>(R.id.rvListagem)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = listaAdapter
+
+        val clickListener = object :ListaAdapter.ListaClickListener{
+            override fun onItemClick(position: Int) {
+                TODO("passar para lista itens activity")
+            }
+
+            override fun onImageDeletarClick(position: Int) {
+                FirebaseInstance.dbFirestore.collection(DBConstantes.TABLE_LISTA).
+                        document(listaAdapter.snapshots.getSnapshot(position).id).delete()
+            }
+
+            override fun onImageEditarClick(position: Int) {
+                val intent = Intent(applicationContext, CadastroListaActivity::class.java)
+                intent.putExtra(DBConstantes.LISTA_ID_INTENT, listaAdapter.snapshots.getSnapshot(position).id)
+                startActivity(intent)
+            }
+        }
+        listaAdapter.clickListener = clickListener
+    }
+
 }
