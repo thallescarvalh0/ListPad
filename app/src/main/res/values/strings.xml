@@ -19,5 +19,6 @@
 
 
     <string name="salvar_text_button">Salvar</string>
+    <string name="categoria_spinner_tv">Categoria:</string>
 
 </resources>

@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.ImageView
+import android.widget.Spinner
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.edu.ifsp.scl.sdm.pa1.listpad.R
@@ -22,7 +23,7 @@ class ListaAdapter(options: FirestoreRecyclerOptions<Lista>)
     inner class ListaViewHolder(view: View):RecyclerView.ViewHolder(view){
         val nomeLista = view.findViewById<TextView>(R.id.nomeListaEt)
         val descricaoLista = view.findViewById<TextView>(R.id.descricaoListaEt)
-        val categoriaLista = view.findViewById<TextView>(R.id.descricaoListaEt)//todo refazer o spinner
+        val categoriaLista = view.findViewById<TextView>(R.id.categoriaListaEt)
         val ckUrgenteLista = view.findViewById<CheckBox>(R.id.urgenteCk)
         init {
             view.setOnClickListener{ clickListener?.onItemClick(bindingAdapterPosition) }
@@ -54,7 +55,7 @@ class ListaAdapter(options: FirestoreRecyclerOptions<Lista>)
     override fun onBindViewHolder(holder: ListaViewHolder, position: Int, model: Lista) {
         holder.nomeLista.text = model.nome
         holder.descricaoLista.text = model.descricao
-        holder.categoriaLista.text = model.descricao
+        holder.categoriaLista.text = model.categoria
         holder.ckUrgenteLista.isChecked = model.urgente
     }
 }

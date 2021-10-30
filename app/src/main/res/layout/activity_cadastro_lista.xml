@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".listagem.CadastroListaActivity">
+    tools:context=".listagem.CadastroListaActivity"
+    android:padding="5dp">
 
     <EditText
         android:id="@+id/edtNomeLista"
@@ -28,14 +29,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtNomeLista" />
 
-    <CheckBox
-        android:id="@+id/ckUrgenteLista"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/urgente_cadastro_lista"
+        android:id="@+id/categoriaTv"
+        android:text="@string/categoria_spinner_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtDescricaoLista" />
+
 
     <Spinner
         android:id="@+id/spCategoria"
@@ -43,7 +45,17 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ckUrgenteLista" />
+        app:layout_constraintTop_toBottomOf="@+id/categoriaTv" />
+
+    <CheckBox
+        android:id="@+id/ckUrgenteLista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/urgente_cadastro_lista"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spCategoria" />
+
 
     <Button
         android:id="@+id/btnCadastroLista"
@@ -52,5 +64,5 @@
         android:text="@string/cadastrar_listagem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spCategoria" />
+        app:layout_constraintTop_toBottomOf="@+id/ckUrgenteLista" />
 </androidx.constraintlayout.widget.ConstraintLayout>
