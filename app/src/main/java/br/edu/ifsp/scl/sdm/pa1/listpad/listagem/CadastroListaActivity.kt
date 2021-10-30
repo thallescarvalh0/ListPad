@@ -5,13 +5,13 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ArrayAdapter
+import android.widget.Spinner
 import br.edu.ifsp.scl.sdm.pa1.listpad.R
 import br.edu.ifsp.scl.sdm.pa1.listpad.databinding.ActivityCadastroListaBinding
 import br.edu.ifsp.scl.sdm.pa1.listpad.listagem.model.Lista
 import br.edu.ifsp.scl.sdm.pa1.listpad.utils.DBConstantes
 import br.edu.ifsp.scl.sdm.pa1.listpad.utils.FirebaseInstance
 import com.google.firebase.firestore.ktx.toObject
-import android.widget.Spinner
 
 class CadastroListaActivity : AppCompatActivity() {
 
@@ -19,8 +19,8 @@ class CadastroListaActivity : AppCompatActivity() {
         ActivityCadastroListaBinding.inflate(layoutInflater)
     }
 
-    lateinit var listaID: String
-    lateinit var categoriaSpinner: String
+    private lateinit var listaID: String
+    private var categoriaSpinner: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
