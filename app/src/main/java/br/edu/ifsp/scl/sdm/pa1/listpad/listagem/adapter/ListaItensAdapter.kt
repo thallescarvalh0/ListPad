@@ -15,19 +15,19 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions
 class ListaItensAdapter(options: FirestoreRecyclerOptions<ListaDetalhes>)
     : FirestoreRecyclerAdapter<ListaDetalhes, ListaItensAdapter.ListaItensViewHolder>(options){
 
-    var clickItemListener: ListaAdapter.ListaClickListener?=null
+    var clickItemListener: ListaItensClickListener?=null
 
     inner class ListaItensViewHolder(view: View): RecyclerView.ViewHolder(view){
         val nomeLista = view.findViewById<TextView>(R.id.nomeItemEt)
         val ckUrgenteLista = view.findViewById<CheckBox>(R.id.urgenteItemCk)
         init {
-            view.setOnClickListener{ clickItemListener?.onItemClick(bindingAdapterPosition) }
+            view.setOnClickListener{ clickItemListener?.onItemListClick(bindingAdapterPosition) }
         }
 
     }
 
     interface ListaItensClickListener{
-        fun onItemClick(position: Int)
+        fun onItemListClick(position: Int)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int ): ListaItensViewHolder {

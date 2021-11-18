@@ -6,4 +6,7 @@ object DBConstantes {
 
     const val TABLE_LISTA = "lista"
     const val LISTA_ID_INTENT: String = "listaID"
+
+    const val TABLE_LISTA_ITENS = "itens_lista"
+    const val LISTA_ITENS_ID_INTENT: String = "item_listaID"
 }

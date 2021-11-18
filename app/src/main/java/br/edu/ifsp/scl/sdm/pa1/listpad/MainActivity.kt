@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.firestore.Query
-
 import br.edu.ifsp.scl.sdm.pa1.listpad.categoria.CategoriaActivity
 import br.edu.ifsp.scl.sdm.pa1.listpad.listagem.CadastroListaActivity
 import br.edu.ifsp.scl.sdm.pa1.listpad.databinding.ActivityMainBinding

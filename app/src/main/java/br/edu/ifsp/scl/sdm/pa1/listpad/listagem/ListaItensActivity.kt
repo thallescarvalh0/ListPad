@@ -2,11 +2,19 @@ package br.edu.ifsp.scl.sdm.pa1.listpad.listagem
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import br.edu.ifsp.scl.sdm.pa1.listpad.R
 import br.edu.ifsp.scl.sdm.pa1.listpad.databinding.ActivityListaItensBinding
 import br.edu.ifsp.scl.sdm.pa1.listpad.listagem.adapter.ListaAdapter
+import br.edu.ifsp.scl.sdm.pa1.listpad.listagem.adapter.ListaItensAdapter
 import br.edu.ifsp.scl.sdm.pa1.listpad.listagem.model.Lista
+import br.edu.ifsp.scl.sdm.pa1.listpad.listagem.model.ListaDetalhes
 import br.edu.ifsp.scl.sdm.pa1.listpad.utils.DBConstantes
 import br.edu.ifsp.scl.sdm.pa1.listpad.utils.FirebaseInstance
+import com.firebase.ui.firestore.FirestoreRecyclerOptions
+import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.toObject
 
 class ListaItensActivity : AppCompatActivity() {
@@ -16,7 +24,7 @@ class ListaItensActivity : AppCompatActivity() {
     }
 
     private lateinit var listaID: String
-    private lateinit var listaAdapter: ListaAdapter
+    private lateinit var listaItensAdapter: ListaItensAdapter
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,15 +42,41 @@ class ListaItensActivity : AppCompatActivity() {
 
                     }
                 }
-            //updatelista
-            listaAdapter.startListening()
+            updateItensLista()
         }
 
     }
 
     override fun onStop() {
         super.onStop()
-        listaAdapter.stopListening()
+        listaItensAdapter.stopListening()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        listaItensAdapter.startListening()
+    }
+
+    private fun updateItensLista(){
+        val query: Query = FirebaseInstance.dbFirestore.collection(DBConstantes.TABLE_LISTA).
+        document(listaID).collection(DBConstantes.TABLE_LISTA_ITENS)
+        val options: FirestoreRecyclerOptions<ListaDetalhes> = FirestoreRecyclerOptions.Builder<ListaDetalhes>()
+            .setQuery(query, ListaDetalhes::class.java).build()
+
+        listaItensAdapter = ListaItensAdapter(options)
+
+        val recyclerView = findViewById<RecyclerView>(R.id.rvListaItens)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = listaItensAdapter
+
+        val clickItemListener = object :ListaItensAdapter.ListaItensClickListener{
+            override fun onItemListClick(position: Int) {
+                TODO("chamar tela de adição ou edição")
+            }
+
+        }
+
+        listaItensAdapter.clickItemListener = clickItemListener
     }
 
 

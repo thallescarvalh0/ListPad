@@ -7,7 +7,7 @@
     tools:context=".listagem.ListaItensActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvListaItensCategoria"
+        android:id="@+id/rvListaItens"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,7 +22,7 @@
         android:clickable="true"
         android:contentDescription="@string/adicionar_categoria_action_bt"
         android:focusable="true"
-        app:layout_constraintBottom_toBottomOf="@+id/rvListaItensCategoria"
+        app:layout_constraintBottom_toBottomOf="@+id/rvListaItens"
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/ic_action_add"/>
 
