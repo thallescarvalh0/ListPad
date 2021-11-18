@@ -21,7 +21,8 @@
                 android:id="@+id/nomeItemEt"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
-                android:textSize="35sp"
+                android:textSize="20sp"
+                android:paddingTop="10dp"
                 tools:ignore="RelativeOverlap"/>
 
             <CheckBox
