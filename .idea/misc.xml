@@ -3,8 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/layout/activity_cadastro_categoria.xml" value="0.5" />
+        <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/layout/activity_cadastro_categoria.xml" value="0.34951456310679613" />
         <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/layout/activity_cadastro_lista.xml" value="0.5" />
+        <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/layout/activity_cadastro_lista_itens.xml" value="0.2765625" />
         <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/layout/activity_lista_itens.xml" value="0.2015625" />
         <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/layout/activity_main.xml" value="0.25905797101449274" />
         <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/layout/layout_lista.xml" value="0.1" />

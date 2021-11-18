@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.edu.ifsp.scl.sdm.pa1.listpad">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,10 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ListPad">
         <activity
+            android:name=".listagem.CadastroListaItensActivity"
+            android:exported="false" />
+        <activity
             android:name=".listagem.ListaItensActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="OPEN_ACTION_ACTIVITY" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -24,6 +28,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="OPEN_ACTION_ACTIVITY" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -32,18 +37,19 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="OPEN_ACTION_ACTIVITY" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:name=".categoria.CategoriaActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="OPEN_ACTION_ACTIVITY" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -53,7 +59,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

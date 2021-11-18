@@ -1,5 +1,6 @@
 package br.edu.ifsp.scl.sdm.pa1.listpad.listagem
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
@@ -7,7 +8,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.edu.ifsp.scl.sdm.pa1.listpad.R
 import br.edu.ifsp.scl.sdm.pa1.listpad.databinding.ActivityListaItensBinding
-import br.edu.ifsp.scl.sdm.pa1.listpad.listagem.adapter.ListaAdapter
 import br.edu.ifsp.scl.sdm.pa1.listpad.listagem.adapter.ListaItensAdapter
 import br.edu.ifsp.scl.sdm.pa1.listpad.listagem.model.Lista
 import br.edu.ifsp.scl.sdm.pa1.listpad.listagem.model.ListaDetalhes
@@ -45,6 +45,13 @@ class ListaItensActivity : AppCompatActivity() {
             updateItensLista()
         }
 
+        listaItensActivity.adicionarItensLista.setOnClickListener {
+            val intent = Intent(applicationContext, CadastroListaItensActivity::class.java)
+            intent.putExtra(DBConstantes.LISTA_ID_INTENT, listaID)
+            intent.putExtra(DBConstantes.LISTA_ITENS_ID_INTENT, "")
+            startActivity(intent)
+        }
+
     }
 
     override fun onStop() {
@@ -71,7 +78,10 @@ class ListaItensActivity : AppCompatActivity() {
 
         val clickItemListener = object :ListaItensAdapter.ListaItensClickListener{
             override fun onItemListClick(position: Int) {
-                TODO("chamar tela de adição ou edição")
+                val intent = Intent(applicationContext, CadastroListaItensActivity::class.java)
+                intent.putExtra(DBConstantes.LISTA_ID_INTENT, listaItensAdapter.snapshots.getSnapshot(position).id)
+                intent.putExtra(DBConstantes.LISTA_ITENS_ID_INTENT, "")
+                startActivity(intent)
             }
 
         }

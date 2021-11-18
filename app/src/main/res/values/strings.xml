@@ -20,5 +20,7 @@
 
     <string name="salvar_text_button">Salvar</string>
     <string name="categoria_spinner_tv">Categoria:</string>
+    <string name="cadastro_itens_lista">Itens Lista</string>
+    <string name="descricao_item_lista">Descrição item lista</string>
 
 </resources>
