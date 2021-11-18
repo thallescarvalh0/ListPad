@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
@@ -13,6 +14,7 @@ import com.google.firebase.firestore.Query
 import br.edu.ifsp.scl.sdm.pa1.listpad.categoria.CategoriaActivity
 import br.edu.ifsp.scl.sdm.pa1.listpad.listagem.CadastroListaActivity
 import br.edu.ifsp.scl.sdm.pa1.listpad.databinding.ActivityMainBinding
+import br.edu.ifsp.scl.sdm.pa1.listpad.listagem.ListaItensActivity
 import br.edu.ifsp.scl.sdm.pa1.listpad.listagem.adapter.ListaAdapter
 import br.edu.ifsp.scl.sdm.pa1.listpad.listagem.model.Lista
 import br.edu.ifsp.scl.sdm.pa1.listpad.utils.DBConstantes
@@ -83,12 +85,15 @@ class MainActivity : AppCompatActivity() {
 
         val clickListener = object :ListaAdapter.ListaClickListener{
             override fun onItemClick(position: Int) {
-                TODO("passar para lista itens activity")
+                val intent = Intent(applicationContext, ListaItensActivity::class.java)
+                intent.putExtra(DBConstantes.LISTA_ID_INTENT, listaAdapter.snapshots.getSnapshot(position).id)
+                startActivity(intent)
             }
 
             override fun onImageDeletarClick(position: Int) {
                 FirebaseInstance.dbFirestore.collection(DBConstantes.TABLE_LISTA).
                         document(listaAdapter.snapshots.getSnapshot(position).id).delete()
+                Toast.makeText(this@MainActivity, "Item excluído", Toast.LENGTH_SHORT).show()
             }
 
             override fun onImageEditarClick(position: Int) {
