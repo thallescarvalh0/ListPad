@@ -22,12 +22,16 @@ class ListaItensAdapter(options: FirestoreRecyclerOptions<ListaDetalhes>)
         val ckUrgenteLista = view.findViewById<CheckBox>(R.id.urgenteItemCk)
         init {
             view.setOnClickListener{ clickItemListener?.onItemListClick(bindingAdapterPosition) }
+
+            view.findViewById<CheckBox>(R.id.urgenteItemCk).setOnClickListener {
+                clickItemListener?.onCheckUrgenteItemList(bindingAdapterPosition) }
         }
 
     }
 
     interface ListaItensClickListener{
         fun onItemListClick(position: Int)
+        fun onCheckUrgenteItemList(position: Int)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int ): ListaItensViewHolder {

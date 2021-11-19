@@ -61,6 +61,7 @@ class ListaItensActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+        updateItensLista()
         listaItensAdapter.startListening()
     }
 
@@ -79,9 +80,20 @@ class ListaItensActivity : AppCompatActivity() {
         val clickItemListener = object :ListaItensAdapter.ListaItensClickListener{
             override fun onItemListClick(position: Int) {
                 val intent = Intent(applicationContext, CadastroListaItensActivity::class.java)
-                intent.putExtra(DBConstantes.LISTA_ID_INTENT, listaItensAdapter.snapshots.getSnapshot(position).id)
-                intent.putExtra(DBConstantes.LISTA_ITENS_ID_INTENT, "")
+                intent.putExtra(DBConstantes.LISTA_ID_INTENT, listaID)
+                intent.putExtra(DBConstantes.LISTA_ITENS_ID_INTENT, listaItensAdapter.snapshots.getSnapshot(position).id)
                 startActivity(intent)
+            }
+
+            override fun onCheckUrgenteItemList(position: Int) {
+                var urgente: Boolean? = listaItensAdapter.snapshots.getSnapshot(position).getBoolean("urgente")
+
+                FirebaseInstance.dbFirestore.collection(DBConstantes.TABLE_LISTA).
+                    document(listaID).collection(DBConstantes.TABLE_LISTA_ITENS).document(
+                    listaItensAdapter.snapshots.getSnapshot(position).id).update("urgente",
+                    !urgente!!
+                )
+
             }
 
         }

@@ -90,8 +90,18 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onImageDeletarClick(position: Int) {
+
+                FirebaseInstance.dbFirestore.collection(DBConstantes.TABLE_LISTA).
+                document(listaAdapter.snapshots.getSnapshot(position).id).
+                collection(DBConstantes.TABLE_LISTA_ITENS).get().addOnSuccessListener {
+                    it.documents.forEach{ documentSnapshot ->
+                        documentSnapshot.reference.delete()
+                    }
+                }
+
                 FirebaseInstance.dbFirestore.collection(DBConstantes.TABLE_LISTA).
                         document(listaAdapter.snapshots.getSnapshot(position).id).delete()
+
                 Toast.makeText(this@MainActivity, "Item excluído", Toast.LENGTH_SHORT).show()
             }
 
@@ -99,6 +109,14 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(applicationContext, CadastroListaActivity::class.java)
                 intent.putExtra(DBConstantes.LISTA_ID_INTENT, listaAdapter.snapshots.getSnapshot(position).id)
                 startActivity(intent)
+            }
+
+            override fun onCheckUrgenteList(position: Int) {
+                var urgente: Boolean? = listaAdapter.snapshots.getSnapshot(position).getBoolean("urgente")
+
+                FirebaseInstance.dbFirestore.collection(DBConstantes.TABLE_LISTA).document(
+                    listaAdapter.snapshots.getSnapshot(position).id).update("urgente",
+                    !urgente!!)
             }
         }
         listaAdapter.clickListener = clickListener

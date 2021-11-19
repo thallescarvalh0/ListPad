@@ -36,6 +36,10 @@ class ListaAdapter(options: FirestoreRecyclerOptions<Lista>)
                 .setOnClickListener{
                     clickListener?.onImageEditarClick(bindingAdapterPosition)
                 }
+
+            view.findViewById<CheckBox>(R.id.urgenteCk).setOnClickListener {
+                clickListener?.onCheckUrgenteList(bindingAdapterPosition) }
+
         }
 
     }
@@ -44,6 +48,7 @@ class ListaAdapter(options: FirestoreRecyclerOptions<Lista>)
         fun onItemClick(position: Int)
         fun onImageDeletarClick(position: Int)
         fun onImageEditarClick(position: Int)
+        fun onCheckUrgenteList(position: Int)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListaViewHolder {
