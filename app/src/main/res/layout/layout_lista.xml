@@ -21,22 +21,44 @@
                 android:id="@+id/nomeListaEt"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
-                android:textSize="35sp"
+                android:textSize="25sp"
                 tools:ignore="RelativeOverlap"/>
+
+            <ImageView
+                android:id="@+id/icon_descricao_list"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:clickable="true"
+                android:layout_below="@+id/nomeListaEt"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/ic_action_description_list" />
 
             <TextView
                 android:id="@+id/descricaoListaEt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/nomeListaEt"
-                android:textSize="20sp" />
+                android:layout_toEndOf="@id/icon_descricao_list"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/icon_categoria_list"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_below="@+id/descricaoListaEt"
+                android:clickable="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/ic_action_categoria_list" />
 
             <TextView
                 android:id="@+id/categoriaListaEt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/descricaoListaEt"
-                android:textSize="20sp" />
+                android:layout_toEndOf="@id/icon_categoria_list"
+                android:textSize="14sp" />
 
             <CheckBox
                 android:layout_width="wrap_content"

@@ -3,15 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/drawable-anydpi/ic_action_add_list.xml" value="0.22135416666666666" />
+        <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/drawable-anydpi/ic_action_categoria_list.xml" value="0.21388888888888888" />
+        <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.21388888888888888" />
+        <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21388888888888888" />
         <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/layout/activity_cadastro_categoria.xml" value="0.34951456310679613" />
         <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/layout/activity_cadastro_lista.xml" value="0.5" />
         <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/layout/activity_cadastro_lista_itens.xml" value="0.2765625" />
         <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/layout/activity_lista_itens.xml" value="0.2015625" />
         <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/layout/activity_main.xml" value="0.25905797101449274" />
-        <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/layout/layout_lista.xml" value="0.1" />
+        <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/layout/layout_lista.xml" value="0.5" />
         <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/layout/layout_lista_itens.xml" value="0.36102564102564105" />
         <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/layout/spinner_item.xml" value="0.2786458333333333" />
         <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/menu/context_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.22135416666666666" />
+        <entry key="..\:/PosGraduacao/ListPad/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.22135416666666666" />
       </map>
     </option>
   </component>
