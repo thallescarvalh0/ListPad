@@ -20,4 +20,4 @@ Lista de itens e itens devem estar relacionados e manter observância aos concei
 desenvolvimento de um banco de dados. A persistência deve ser implementada usando algum 
 dos métodos desenvolvidos na disciplina de BDM."
 
-Video funcionamento:
+[![Video funcionamento](https://raw.githubusercontent.com/thallescarvalh0/ListPad/master/app/src/main/java/br/edu/ifsp/scl/sdm/pa1/listpad/video/ListPad.mp4)]
